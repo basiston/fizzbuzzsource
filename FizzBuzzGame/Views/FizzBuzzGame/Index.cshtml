@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container" ng-controller="fizzbuzzController">
+    <h4>
+        This simple WebApp makes a round trip from UI to Business layer and back to UI.
+    </h4>
+    <h6> Fizz buzz is a group word game for children to teach them about division.[1] Players take turns to count incrementally, replacing any number divisible by three with the word "fizz", and any number divisible by five with the word "buzz"</h6>
+    <input ng-model="Fizzbuzz.value" placeholder="Write a number > 0" class="form-control" type="text" id="value" />
+    <button ng-click="GetValues(Fizzbuzz.value)" class="btn-default">Play</button>
+    <button ng-click="Clear()" class="btn-default">Clear</button>
+
+    <table>
+
+        <tr ng-repeat="p in result">
+            <td>{{p.Value}}</td>
+        </tr>
+    </table>
+
+    <footer>
+        The application is done by using AngularJs with ASP.NET WEBAPI2
+    </footer>
+</div>
