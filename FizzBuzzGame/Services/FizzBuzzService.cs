@@ -8,6 +8,11 @@ namespace FizzBuzzGame.Services
 {
     public class FizzBuzzService : IFizzBuzzService
     {
+        /// <summary>
+        /// This method returns list of value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>List of values</returns>
         public List<FizzBuzzModel> GetFizzBuzz(int? value)
         {
 
