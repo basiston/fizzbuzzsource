@@ -8,6 +8,13 @@ namespace FizzBuzzGame.Services
 {
     public class FizzBuzzService : IFizzBuzzService
     {
+
+        private string Fizz { get; set; } = "Fizz";
+        private string Buzz { get; set; } = "Buzz";
+        private string FizzBuzz { get; set; } = "FizzBuzz";
+
+
+
         /// <summary>
         /// This method returns list of value.
         /// </summary>
@@ -15,7 +22,7 @@ namespace FizzBuzzGame.Services
         /// <returns>List of values</returns>
         public List<FizzBuzzModel> GetFizzBuzz(int? value)
         {
-
+            
             var fizzBuzzlist = new List<FizzBuzzModel>();
 
             for (int i = 1; i <= value; i++)
@@ -24,11 +31,11 @@ namespace FizzBuzzGame.Services
 
                 if (i % 3 == 0)
                 {
-                    fizzbuzzreturnvalue = Convert.ToString(PlayerTypes.Fizz);
+                    fizzbuzzreturnvalue = Fizz;
                 }
                 else if (i % 5 == 0)
                 {
-                    fizzbuzzreturnvalue = Convert.ToString(PlayerTypes.Buzz);
+                    fizzbuzzreturnvalue = Buzz;
                 }
 
                 else
@@ -38,7 +45,7 @@ namespace FizzBuzzGame.Services
 
                 if (i % 3 == 0 && i % 5 == 0)
                 {
-                    fizzbuzzreturnvalue = Convert.ToString(PlayerTypes.FizzBuzz);
+                    fizzbuzzreturnvalue = FizzBuzz;
                 }
 
 
@@ -49,11 +56,4 @@ namespace FizzBuzzGame.Services
         }
     }
 
-    public enum PlayerTypes
-    {
-        Fizz,
-        Buzz,
-        FizzBuzz
-
-    }
 }
