@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Services\" />
     <Folder Include="Views\FizzBuzz\" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +163,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\FizzBuzzModel.cs" />
+    <Compile Include="Models\FizzBuzzViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\FizzBuzzService.cs" />
-    <Compile Include="Services\IFizzBuzzService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -237,7 +236,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\FizzBuzzGame\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FizzBuzzService\FizzBuzzService.csproj">
+      <Project>{E636C33D-6A6E-470A-B8DC-6A7B0A96B0C2}</Project>
+      <Name>FizzBuzzService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />

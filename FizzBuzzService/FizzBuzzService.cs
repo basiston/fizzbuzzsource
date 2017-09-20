@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using FizzBuzzGame.Models;
+using System.Text;
+using System.Threading.Tasks;
+using FizzBuzzService.Models;
 
-namespace FizzBuzzGame.Services
+namespace FizzBuzzService
 {
     public class FizzBuzzService : IFizzBuzzService
     {
+
 
         private string Fizz { get; set; } = "Fizz";
         private string Buzz { get; set; } = "Buzz";
@@ -22,7 +24,7 @@ namespace FizzBuzzGame.Services
         /// <returns>List of values</returns>
         public List<FizzBuzzModel> GetFizzBuzz(int? value)
         {
-            
+
             var fizzBuzzlist = new List<FizzBuzzModel>();
 
             for (int i = 1; i <= value; i++)
@@ -55,5 +57,4 @@ namespace FizzBuzzGame.Services
             return fizzBuzzlist;
         }
     }
-
 }

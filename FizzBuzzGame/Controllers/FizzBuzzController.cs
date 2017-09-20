@@ -5,7 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using FizzBuzzGame.Models;
-using FizzBuzzGame.Services;
+using FizzBuzzService;
+using FizzBuzzService.Models;
 
 namespace FizzBuzzGame.Controllers
 {
@@ -14,7 +15,7 @@ namespace FizzBuzzGame.Controllers
         private readonly IFizzBuzzService _service;
         public FizzBuzzController()
         {
-            _service = new FizzBuzzService();
+            _service = new FizzBuzzService.FizzBuzzService();
         }
 
         /// <summary>
@@ -30,6 +31,8 @@ namespace FizzBuzzGame.Controllers
             {
                 return null;
             }
+
+            var vm = new List<FizzBuzzViewModel>();
             return _service.GetFizzBuzz(value);
 
         }
